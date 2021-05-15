@@ -44,15 +44,13 @@ public class BinaryTree {
         if (value == current.getValue()) {
             if (current.getLeft() == null && current.getRight() == null) {
                 return null;
-            }
-            else if (current.getRight() == null) {
+            } else if (current.getRight() == null) {
                 return current.getLeft();
-            }
-            else if (current.getLeft() == null) {
+            } else if (current.getLeft() == null) {
                 return current.getRight();
             }
 
-            if(current.getLeft() != null && current.getRight() != null){
+            if (current.getLeft() != null && current.getRight() != null) {
                 int smallestValue = findTheSmallestValueForDeletion(current.getRight());
                 current.setValue(smallestValue);
                 current.setRight(deleteNode(current.getRight(), smallestValue));
@@ -77,11 +75,19 @@ public class BinaryTree {
         return root.getLeft() == null ? root.getValue() : findTheSmallestValueForDeletion(root.getLeft());
     }
 
-    public void traverseInOrder(Node node){
-        if(node != null){
+    public void traverseInOrder(Node node) {
+        if (node != null) {
             traverseInOrder(node.getLeft());
             System.out.print(" " + node.getValue());
             traverseInOrder(node.getRight());
+        }
+    }
+
+    public void traversePreOrder(Node node) {
+        if (node != null) {
+            System.out.print(" " + node.getValue());
+            traversePreOrder(node.getLeft());
+            traversePreOrder(node.getRight());
         }
     }
 

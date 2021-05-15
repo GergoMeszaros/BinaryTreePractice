@@ -3,11 +3,13 @@ public class Main {
         BinaryTree bt = new BinaryTree();
         addElementsToTree(bt);
 
-        System.out.println(bt);
-        System.out.println(bt.contains(111));
+        //System.out.println(bt);
+        //System.out.println(bt.contains(111));
         //bt.delete(4);
         //System.out.println(bt);
         bt.traverseInOrder(bt.getRoot());
+        System.out.println("\n");
+        bt.traversePreOrder(bt.getRoot());
 
     }
 
