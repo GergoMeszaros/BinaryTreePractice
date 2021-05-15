@@ -2,6 +2,10 @@ public class Main {
     public static void main(String[] args) {
         BinaryTree bt = new BinaryTree();
         addElementsToTree(bt);
+
+        System.out.println(bt);
+        System.out.println(bt.contains(111));
+        bt.delete(3);
         System.out.println(bt);
 
     }
