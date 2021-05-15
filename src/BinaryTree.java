@@ -77,10 +77,22 @@ public class BinaryTree {
         return root.getLeft() == null ? root.getValue() : findTheSmallestValueForDeletion(root.getLeft());
     }
 
+    public void traverseInOrder(Node node){
+        if(node != null){
+            traverseInOrder(node.getLeft());
+            System.out.print(" " + node.getValue());
+            traverseInOrder(node.getRight());
+        }
+    }
+
     @Override
     public String toString() {
         return "BinaryTree{" +
                 "root=" + root +
                 '}';
+    }
+
+    public Node getRoot() {
+        return root;
     }
 }
