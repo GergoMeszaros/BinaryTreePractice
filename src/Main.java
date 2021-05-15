@@ -8,8 +8,12 @@ public class Main {
         //bt.delete(4);
         //System.out.println(bt);
         bt.traverseInOrder(bt.getRoot());
-        System.out.println("\n");
+        System.out.print("\n");
         bt.traversePreOrder(bt.getRoot());
+        System.out.print("\n");
+        bt.traversePostOrder(bt.getRoot());
+        System.out.print("\n");
+        bt.breadthFirstSearch();
 
     }
 

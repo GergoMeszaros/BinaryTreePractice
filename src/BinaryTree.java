@@ -1,3 +1,6 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinaryTree {
 
     private Node root;
@@ -88,6 +91,35 @@ public class BinaryTree {
             System.out.print(" " + node.getValue());
             traversePreOrder(node.getLeft());
             traversePreOrder(node.getRight());
+        }
+    }
+
+    public void traversePostOrder(Node node){
+        if(node != null){
+            traversePostOrder(node.getLeft());
+            traversePreOrder(node.getRight());
+            System.out.print(" " + node.getValue());
+        }
+    }
+
+
+    public void breadthFirstSearch(){
+        if(root == null) {
+            System.out.println("Collection doesn't contain any elements!!!");
+        }
+
+        Queue<Node> nodes = new LinkedList<>();
+        nodes.add(root);
+        while(!nodes.isEmpty()){
+            Node node = nodes.remove();
+            System.out.print(" " + node.getValue());
+
+            if(node.getLeft() != null){
+                nodes.add(node.getLeft());
+            }
+            if(node.getRight() != null){
+                nodes.add(node.getRight());
+            }
         }
     }
 
