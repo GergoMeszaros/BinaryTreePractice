@@ -78,6 +78,9 @@ public class BinaryTree {
         return root.getLeft() == null ? root.getValue() : findTheSmallestValueForDeletion(root.getLeft());
     }
 
+
+    /** Depth first search: getting all the elements left from the root,
+     * the root and elements right from the root*/
     public void traverseInOrder(Node node) {
         if (node != null) {
             traverseInOrder(node.getLeft());
@@ -86,6 +89,7 @@ public class BinaryTree {
         }
     }
 
+    /** Depth first search: getting the root, left elements, right elements*/
     public void traversePreOrder(Node node) {
         if (node != null) {
             System.out.print(" " + node.getValue());
@@ -94,6 +98,7 @@ public class BinaryTree {
         }
     }
 
+    /** Depth first search: getting all the left and all the right elements before the root*/
     public void traversePostOrder(Node node){
         if(node != null){
             traversePostOrder(node.getLeft());
