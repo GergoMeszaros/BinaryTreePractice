@@ -5,7 +5,7 @@ public class Main {
 
         System.out.println(bt);
         System.out.println(bt.contains(111));
-        bt.delete(3);
+        bt.delete(4);
         System.out.println(bt);
 
     }

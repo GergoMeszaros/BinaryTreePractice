@@ -45,11 +45,18 @@ public class BinaryTree {
             if (current.getLeft() == null && current.getRight() == null) {
                 return null;
             }
-            if (current.getRight() == null) {
+            else if (current.getRight() == null) {
                 return current.getLeft();
             }
-            if (current.getLeft() == null) {
+            else if (current.getLeft() == null) {
                 return current.getRight();
+            }
+
+            if(current.getLeft() != null && current.getRight() != null){
+                int smallestValue = findTheSmallestValueForDeletion(current.getRight());
+                current.setValue(smallestValue);
+                current.setRight(deleteNode(current.getRight(), smallestValue));
+                return current;
             }
 
         } else if (value < current.getValue()) {
@@ -59,13 +66,15 @@ public class BinaryTree {
         } else {
             current.setRight(deleteNode(current.getRight(), value));
         }
-
         return current;
     }
 
-
     public void delete(int value) {
         root = deleteNode(root, value);
+    }
+
+    private int findTheSmallestValueForDeletion(Node root) {
+        return root.getLeft() == null ? root.getValue() : findTheSmallestValueForDeletion(root.getLeft());
     }
 
     @Override
